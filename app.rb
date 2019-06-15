@@ -23,20 +23,24 @@ get '/about' do
 		@barber = params[:barber]
 		@color = params[:color]
 
+hh = {
 
-		hh = { :username => 'Enter your name',
-				:phone => 'Enter your phone',
-				:datetime => 'Enter date and time'
-		}
+		:username => 'Enter name'
+		:phone => 'Enter phone'
+		:datetime => 'Enter date and time'
+
+}
+		
+			@error hh.select {|key,_ params[key] == }.values.join(",")
+
+		if @error != ''
+					return erb :visit
+		end
+
+				
 
 		
-	@error = hh.select {|key,_| params[key] == ""}.values.join(",")
-
-if @error != ''
-	return erb :visit
-end
-
+	
 		erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
 
 	end
-	def 
