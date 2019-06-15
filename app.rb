@@ -34,7 +34,7 @@ hh = {
 			@error hh.select {|key,_ params[key] == }.values.join(",")
 
 		if @error != ''
-					return erb :visit
+					redirected  '/visit'
 		end
 
 				
